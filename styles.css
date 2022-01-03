@@ -1,0 +1,83 @@
+:root {
+  --sentences: 3;
+  --max-sentence-words: 21;
+  --duration: 1.4s;
+
+  --background-color: #282c34;
+  --color: white;
+  --font-size: calc(2vw + 4px);
+  --font-family: monospace;
+
+  --sentence-color-1: #ff637d;
+  --sentence-color-2: #66d7d1;
+  --sentence-color-3: #fff87f;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+
+  background-color: var(--background-color);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: var(--color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+}
+
+.typing-container {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.dynamic-sentences {
+  display: grid;
+  overflow: hidden;
+  height: 1.2em;
+  font-weight: bolder;
+}
+
+.dynamic-sentence {
+  width: 0%;
+  height: inherit;
+  overflow: hidden;
+  word-break: break-all;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+
+  animation: changeSentence calc(var(--duration) * 2 * var(--sentences))
+      steps(var(--sentences)) infinite,
+    typing var(--duration) steps(var(--max-sentence-words)) infinite alternate;
+}
+
+.sentence-1 {
+  text-decoration-color: var(--sentence-color-1);
+}
+
+.sentence-2 {
+  text-decoration-color: var(--sentence-color-2);
+}
+
+.sentence-3 {
+  text-decoration-color: var(--sentence-color-3);
+}
+
+@keyframes changeSentence {
+  100% {
+    transform: translateY(calc(-100% * var(--sentences)));
+  }
+}
+
+@keyframes typing {
+  50%,
+  100% {
+    width: 100%;
+  }
+}
