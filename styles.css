@@ -5,8 +5,13 @@
 
   --background-color: #282c34;
   --color: white;
-  --font-size: calc(2vw + 4px);
   --font-family: monospace;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 18px;
+  --font-size-md: 24px;
+  --font-size-lg: 32px;
+  --font-size-xl: 42px;
 
   --sentence-color-1: #ff637d;
   --sentence-color-2: #66d7d1;
@@ -17,11 +22,11 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  min-width: 320px;
   display: grid;
   place-items: center;
 
   background-color: var(--background-color);
-  font-size: var(--font-size);
   font-family: var(--font-family);
   color: var(--color);
 }
@@ -79,5 +84,35 @@ body {
   50%,
   100% {
     width: 100%;
+  }
+}
+
+@media (min-width: 320px) {
+  body {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (min-width: 480px) {
+  body {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: var(--font-size-xl);
   }
 }
