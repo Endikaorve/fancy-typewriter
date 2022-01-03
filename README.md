@@ -1,2 +1,5 @@
 # fancy-typewriter
-Fancy typewriter animation
+
+Fancy CSS Only typewriter animation
+
+Demo: https://codepen.io/Endikaorve/full/eYGrWyQ
